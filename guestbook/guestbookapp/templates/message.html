@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content%}
+            <div class="block_full_div">
+                    <div class="fancy_div flexer">
+                       <b><a href="/">Вернуться</a></b> <b><a href="../delete/{{ item.pk }}">Удалить</a></b>
+                    </div>
+                <div class="block_full_div">
+                    <div class="fancy_div">
+                        Запись: <b><a href="/{{ item.pk }}">{{ item.pk }}</a></b> Отправитель: <b>{{ item.author }}</b>; Дата: <b>{{ item.date }}</b>
+                        <div class="text_div">
+                            {{ item.text }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock %}

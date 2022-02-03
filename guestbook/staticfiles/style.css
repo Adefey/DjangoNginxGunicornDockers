@@ -1,0 +1,138 @@
+html {
+    width: 90%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16pt;
+    background-color: #F5F5F5;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+header {
+    font-size: 100pt;
+}
+
+main {
+    padding: 1% 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+p {
+    margin: 0;
+}
+.flexer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.logo_img {
+    width: 10%;
+    height: 10%;
+}
+
+.side_div {
+    width: 46%;
+    display: flex;
+    flex-direction: column;
+}
+
+.block_div {
+    margin: 2% 0;
+}
+
+.block_full_div {
+    width: 100%;
+    margin: 2% 0;
+}
+
+.fancy_div {
+    padding: 10px;
+    background-color: #FFF;
+    border-radius: 10px;
+    animation: rainbow 3s linear;
+    animation-iteration-count: infinite;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.fancy_div:hover {
+    background-color:#AAF;
+}
+
+.text_div {
+    border-top: 1px solid #000;
+    word-wrap: break-word;
+}
+
+form {
+    padding: 10px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+input[type=text] {
+    width: 90%;
+    margin: 10px;
+    font-family: inherit;
+    line-height: inherit;
+    font-size: inherit;
+}
+
+textarea {
+    width: 90%;
+    margin: 10px;
+    height: 200px;
+    resize: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+input[type=submit] {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+@keyframes rainbow{
+		100%,0%{
+			box-shadow: 0 0 20px 0px rgb(255,0,0);
+		}
+		8%{
+			box-shadow: 0 0 20px 0px rgb(255,127,0);
+		}
+		16%{
+			box-shadow: 0 0 20px 0px rgb(255,255,0);
+		}
+		25%{
+			box-shadow: 0 0 20px 0px rgb(127,255,0);
+		}
+		33%{
+			box-shadow: 0 0 20px 0px rgb(0,255,0);
+		}
+		41%{
+			box-shadow: 0 0 20px 0px rgb(0,255,127);
+		}
+		50%{
+			box-shadow: 0 0 20px 0px rgb(0,255,255);
+		}
+		58%{
+			box-shadow: 0 0 20px 0px rgb(0,127,255);
+		}
+		66%{
+			box-shadow: 0 0 20px 0px rgb(0,0,255);
+		}
+		75%{
+			box-shadow: 0 0 20px 0px rgb(127,0,255);
+		}
+		83%{
+			box-shadow: 0 0 20px 0px rgb(255,0,255);
+		}
+		91%{
+			box-shadow: 0 0 20px 0px rgb(255,0,127);
+		}
+}

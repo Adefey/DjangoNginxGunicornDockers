@@ -1,0 +1,28 @@
+{% load static %}
+<html>
+    <head>
+        <title>Доска объявлений</title>
+        <link rel="stylesheet" href="{% static "style.css" %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <header>
+            <div class="fancy_div flexer">
+                <img class="logo_img" src="{% static "logo.png" %}">
+                <p>Доска объявлений</p>
+            </div>
+        </header>
+        <main class="parent_div">
+            {% block content %}
+            {% endblock %}
+        </main>
+        <footer>
+             <div class="fancy_div flexer">
+                <p>Сайт сделал <a href="https://vk.com/adefe">Adefe</a></p>
+            </div>
+        </footer>
+    </body>
+</html>

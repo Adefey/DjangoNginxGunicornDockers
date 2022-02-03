@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content%}
+            <div class="side_div">
+                <div class="block_div">
+                    <div class="fancy_div">
+                         <form action="/save/" method="post">
+                            {% csrf_token %}
+                            Ваше имя: <input type="text" name="author" value="">
+                            Ваше сообщение: <textarea name="text" value=""></textarea>
+                            <input type="submit" value="Опубликовать сообщение" class="animated">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="side_div">
+            {% for item in obj %}
+                <div class="block_div">
+                    <div class="fancy_div">
+                        Запись: <b><a href="/{{ item.pk }}">{{ item.pk }}</a></b> Отправитель: <b>{{ item.author }}</b>; Дата: <b>{{ item.date }}</b>
+                        <div class="text_div">
+                            {{ item.text }}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+{% endblock %}
