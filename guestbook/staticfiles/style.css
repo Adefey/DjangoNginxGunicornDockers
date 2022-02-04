@@ -4,12 +4,10 @@ html {
     font-size: 16pt;
     background-color: #F5F5F5;
     margin: 0 auto;
-    display: flex;
-    flex-direction: row;
 }
 
 header {
-    font-size: 100pt;
+    font-size: 50pt;
 }
 
 main {
