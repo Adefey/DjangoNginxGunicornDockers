@@ -25,9 +25,8 @@ services:
       - MARIADB_ROOT_PASSWORD=14565
       - MARIADB_USER=user
       - MARIADB_PASSWORD=14565
-      - MYSQL_RANDOM_ROOT_PASSWORD="yes"
-    ports:
-      - 3306:3306
+    expose:
+      - 3306
 
   nginx:
     build: ./nginx
