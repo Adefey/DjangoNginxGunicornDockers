@@ -2,6 +2,18 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import DetailView
 from .models import Message
+import pickle
+try:
+    with open("./model.pk", "rb") as file:
+        bytes_data = pickle.load(file)
+        trained_model = pickle.loads(bytes_data)
+except Exception:
+    class TrainedModelMock:
+        def __init__(self):
+            pass
+        def predict(self, text):
+            return "Файл нейросети поврежден и/или отсутствует и не был загружен :("
+    trained_model = TrainedModelMock()
 
 def index(request):
     obj = Message.objects.all().order_by('-pk')
@@ -19,6 +31,7 @@ def save_msg(request):
         if (request.POST.get("author") != "") and (request.POST.get("text") != ""):
             obj.author = request.POST.get("author")
             obj.text = request.POST.get("text")
+            obj.answer = trained_model.predict(obj.text)
             obj.save();
     return HttpResponseRedirect("/")
 

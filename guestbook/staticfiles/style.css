@@ -1,7 +1,7 @@
 html {
     width: 90%;
     font-family: 'Roboto', sans-serif;
-    font-size: 16pt;
+    font-size: 18pt;
     background-color: #F5F5F5;
     margin: 0 auto;
 }
@@ -27,13 +27,22 @@ p {
     align-items: center;
 }
 
+.flexer_lesser{
+    display: flex;
+    flex-direction: row;
+}
+
 .logo_img {
     width: 10%;
     height: 10%;
 }
 
+.center {
+    text-align: center;
+}
+
 .side_div {
-    width: 46%;
+    width: 48%;
     display: flex;
     flex-direction: column;
 }
@@ -51,7 +60,7 @@ p {
     padding: 10px;
     background-color: #FFF;
     border-radius: 10px;
-    animation: rainbow 3s linear;
+    box-shadow: 0 0 20px 0px rgb(128,128,128);
     animation-iteration-count: infinite;
     overflow: hidden;
     transition: all 0.5s ease;

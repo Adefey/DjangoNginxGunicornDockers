@@ -7,8 +7,8 @@ services:
       dockerfile: Dockerfile
     command: gunicorn guestbook.wsgi:application --bind 0.0.0.0:8000 #python manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./guestbook/staticfiles:/home/app/web/staticfiles
-      - ./guestbook/:/usr/src/app/
+      - ./guestbook/staticfiles:/home/app/web/staticfiles:z
+      - ./guestbook/:/usr/src/app/:z
     expose:
       - 8000
     env_file:
@@ -19,7 +19,7 @@ services:
   db:
     image: mariadb:latest
     volumes:
-      - ./mariadb:/var/lib/mysql
+      - ./mariadb:/var/lib/mysql:z
     environment:
       - MARIADB_DATABASE=guestbook
       - MARIADB_ROOT_PASSWORD=14565
@@ -35,4 +35,4 @@ services:
     depends_on:
       - web
     volumes:
-      - ./guestbook/staticfiles:/home/app/web/staticfiles
+      - ./guestbook/staticfiles:/home/app/web/staticfiles:z
