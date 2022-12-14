@@ -27,8 +27,8 @@ def save_msg(request):
             obj.text = request.POST.get("text")
             feature = {"feature": obj.text}
             response = requests.get(
-                "http://127.0.0.1:14565/predict", json=feature)
-            obj.answer = response["result"]
+                "http://127.0.0.1:3310/predict", json=feature)
+            obj.answer = response.json()["result"]
             obj.save()
     return HttpResponseRedirect("/")
 

@@ -45,4 +45,4 @@ services:
     volumes:
       - .:/home:z
     ports:
-      - 14565:14565
+      - 3310:3310

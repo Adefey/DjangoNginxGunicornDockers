@@ -8,4 +8,4 @@ RUN cd /home/ && \
     dnf -y install pip && \
     pip install -r /home/requirements.txt
 
-CMD ["uvicorn", "--app-dir", "/home/", "--host", "0.0.0.0", "--port", "14565", "app:FASTAPI_APP"]
+CMD ["uvicorn", "--app-dir", "/home/", "--host", "0.0.0.0", "--port", "3310", "app:FASTAPI_APP"]

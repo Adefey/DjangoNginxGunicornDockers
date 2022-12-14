@@ -1,11 +1,8 @@
 import os
 import pickle
-import pandas as pd
-from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import StandardScaler
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.impute import KNNImputer
 import sys
+import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
 from fastapi import FastAPI
 from pydantic import BaseModel, conlist
 
@@ -83,7 +80,13 @@ trained_model = None
 def prepare_models():
     global trained_model
     try:
-        trained_model = torch.load("mdl.pkl")
+        checkpoint = "Kirili4ik/ruDialoGpt3-medium-finetuned-telegram"
+        tokenizer =  AutoTokenizer.from_pretrained(checkpoint)
+        model = AutoModelForCausalLM.from_pretrained(checkpoint)
+        checkpoint = torch.load("PostBot.pt",  map_location=torch.device('cpu'))
+        model.load_state_dict(checkpoint['model_state_dict'])
+        model.eval()
+        trained_model = Mdl(model, tokenizer)
     except Exception as e:
         class TrainedModelMock:
             def __init__(self):
