@@ -5,7 +5,8 @@ services:
     build:
       context: ./guestbook
       dockerfile: Dockerfile
-    command: gunicorn guestbook.wsgi:application --bind 0.0.0.0:8000 #python manage.py runserver 0.0.0.0:8000
+    command: gunicorn guestbook.wsgi:application --bind 0.0.0.0:8000
+    #command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./guestbook/staticfiles:/home/app/web/staticfiles:z
       - ./guestbook/:/usr/src/app/:z
@@ -36,3 +37,12 @@ services:
       - web
     volumes:
       - ./guestbook/staticfiles:/home/app/web/staticfiles:z
+
+  mlapp:
+    build:
+      context: ./fastapi_model
+      dockerfile: Dockerfile
+    volumes:
+      - .:/home:z
+    ports:
+      - 14565:14565

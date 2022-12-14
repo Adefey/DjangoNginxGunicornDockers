@@ -1,0 +1,11 @@
+numpy
+fastapi
+pydantic
+uvicorn
+httpx
+Django
+gunicorn
+torch
+datasets
+transformers
+

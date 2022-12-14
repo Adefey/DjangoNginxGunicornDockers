@@ -1,1 +1,6 @@
 mariadb/*
+fastapi_model/mdl.pkl
+.ipynb_checkpoints/
+fastapi_model/__pycache__/
+guestbook/guestbook/__pycache__/
+
